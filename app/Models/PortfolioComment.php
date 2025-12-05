@@ -2,25 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PortfolioComment extends Model
 {
-    protected $fillable = [
-        'portfolio_id',
-        'user_id',
-        'user_email',
-        'user_role',
-        'comment',
-    ];
+    use HasFactory;
 
-    public function project() {
-        return $this->belongsTo(Project::class, 'portfolio_id');
+    protected $fillable = ['project_id', 'user_id', 'comment'];
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }
-
-

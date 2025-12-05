@@ -27,10 +27,10 @@
                         <img src="https://placehold.co/521x400" alt="">
                     </div>
                 </div>
-                <div class="project-text-grid">
-                    <h2 class="project-title">
-                        Project Title
-                    </h2>       
+                <div class="project-text-grid" style="margin: 20px;">
+                    <h2 class="project-summary-title" style="font-size: calc(13px + 1.4rem); font-weight: 700;">
+                        Summary Project
+                    </h2>
                     <p class="project-summary">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem sunt ut quo magnam eum deleniti dolore corporis. Fugiat porro, corporis at laudantium expedita odit quidem dolor, ullam aut ipsa vero.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae soluta autem qui eius officia, aliquam, consectetur doloribus neque expedita, officiis accusantium? Inventore fugit, rerum repudiandae porro voluptate necessitatibus cumque!
@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- Gallery -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="project-gallery">
                     <img src="https://placehold.co/521x400" alt="">
                     <img src="https://placehold.co/521x400" alt="">
                     <img src="https://placehold.co/521x400" alt="">
@@ -56,25 +56,90 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
+
         .project-info {
             grid-column: 1/2;
             margin: 1rem;
         }
+
         .project-info p {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+
         .project-info a {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
+
         .project-title {
             margin-top: 0rem;
         }
+
         .project-subtext {
             margin-top: 1rem;
         }
+
         .project-info-highlight {
             margin: 1rem;
             grid-column: 2/3;
+        }
+
+        .project-summary-title {
+            margin: 1rem;
+        }
+
+        .project-summary-title {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .project-summary {
+            margin: 1rem;
+        }
+
+        .project-gallery {
+            margin-top: 40px;
+            column-count: 4;
+            column-gap: 10px;
+        }
+
+        @media screen and (max-width: 880px) {
+            .project-gallery {
+                column-count: 2;
+                column-gap: 10px;
+            }
+
+            .project-gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in-out;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .project-gallery {
+                column-count: 1;
+                column-gap: 10px;
+            }
+
+            .project-gallery img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                transition: transform 0.3s ease-in-out;
+                margin-bottom: 10px;
+            }
+        }
+
+        .project-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.05);
         }
     </style>
 </x-app-layout>
